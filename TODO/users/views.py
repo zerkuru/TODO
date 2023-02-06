@@ -1,19 +1,34 @@
 from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
 from .models import User, Project, ToDo
-from .serializers import UserModelSerializer
+from .serializers import UserModelSerializer, ProjectModelSerializer, ToDoModelSerializer
+from rest_framework.views import APIView
+from rest_framework.renderers import JSONRenderer
+from rest_framework.response import Response
 
-class UserModelViewSet(ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserModelSerializer
 
-class ProjectModelViewSet(ModelViewSet):
-    queryset = Project.objects.all()
-    serializer_class = UserModelSerializer
+class UserModelViewSet(APIView):
+    renderer_classes = [JSONRenderer]
+    def get(self, request, format=None):
+        articles = User.objects.all()
+        serializer = UserModelSerializer(User, many=True)
+        return Response(serializer.data)
+
+class ProjectModelViewSet(APIView):
+    renderer_classes = [JSONRenderer]
+
+    def get(self, request, format=None):
+        articles = Project.objects.all()
+        serializer = UserModelSerializer(Project, many=True)
+        return Response(serializer.data)
 
 class ToDoModelViewSet(ModelViewSet):
-    queryset = ToDo.objects.all()
-    serializer_class = UserModelSerializer
+    renderer_classes = [JSONRenderer]
+
+    def get(self, request, format=None):
+        articles = ToDo.objects.all()
+        serializer = ToDoModelSerializer(ToDo, many=True)
+        return Response(serializer.data)
 
 
 
