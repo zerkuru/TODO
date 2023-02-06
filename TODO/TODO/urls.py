@@ -29,8 +29,10 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include(router.urls)),
     path('views/api-view/users', views.UserModelViewSet.as_view()),
-    path('views/api-view/users', views.ProjectModelViewSet.as_view()),
-    path('views/api-view/users', views.TodoModelViewSet.as_view()),
+    path('views/api-view/projects', views.ProjectModelViewSet.as_view()),
+    path('views/api-view/todos', views.TodoModelViewSet.as_view()),
 
 ]
+
+
 

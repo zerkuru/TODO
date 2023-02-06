@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import UserList from './components/User.js';
+import ProjectList from './components/Project.js'
+import ToDoList from './components/ToDo.js'
+
 import axios from 'axios';
 
 class App extends React.Component {
