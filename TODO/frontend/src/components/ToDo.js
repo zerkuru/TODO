@@ -14,9 +14,10 @@ return (
     <td><button type='button'>Create</button></td>
 </tr>
 )
-}
+};
 const ToDoList = ({items}) => {
 return (
+<div>
 <table>
 <tr>
 <th>PROJECT</th>
@@ -27,6 +28,7 @@ return (
 {items.map((item) => <ToDoItem item={item} deleteToDo={deleteToDo} />)}
 </table>
 <Link to='/todos/create'>Create</Link>
+</div>
 )
-}
+};
 export default ToDoList

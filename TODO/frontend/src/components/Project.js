@@ -11,10 +11,11 @@ const ProjectItem = ({item, deleteProject}) => {
             <td><button type='button'>Create</button></td>
         </tr>
     )
-    }
+    };
 
 const ProjectList = ({items}) => {
     return (
+    <div>
         <table>
             <tr>
                 <th>PROJECT_NAME</th>
@@ -24,6 +25,7 @@ const ProjectList = ({items}) => {
         {items.map((item) => <ProjectItem item={item} deleteBook={deleteProject} />)}
         </table>
         <Link to='/projects/create'>Create</Link>
+    </div>
 )
-}
+};
 export default ProjectList

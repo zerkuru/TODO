@@ -16,7 +16,7 @@ class ToDoForm extends React.Component {
     handleSubmit(event) {
       this.props.createToDo(this.state.text, this.state.project, this.state.creator)
 event.preventDefault()
-}
+}};
 
 
 render() {
@@ -42,6 +42,6 @@ render() {
                 <input type="submit" className="btn btn-primary" value="Save" />
         </form>
 );
-}
-}
+
+};
 export default ToDoForm

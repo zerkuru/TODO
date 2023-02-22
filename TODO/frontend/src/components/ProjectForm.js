@@ -17,6 +17,7 @@ class ProjectForm extends React.Component {
 this.props.createProject(this.state.project_name, this.state.reference)
 event.preventDefault()
 }
+};
 
 
 render() {
@@ -36,6 +37,6 @@ render() {
                 <input type="submit" className="btn btn-primary" value="Save" />
         </form>
 );
-}
-}
+
+};
 export default BookForm
