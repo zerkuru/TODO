@@ -27,6 +27,18 @@ class App extends React.Component {
         }).catch(error => console.log(error))
     }
 
+    componentDidMount() {
+        axios.get('http://127.0.0.1:8000/api/user')
+        .then(response => {
+            const users = response.data
+            this.setState(
+                {
+                     'users': users
+                }
+            )
+        }).catch(error => console.log(error))
+    }
+
 
     render () {
         return (

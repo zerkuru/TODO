@@ -10,6 +10,6 @@ class Project(models.Model):
 class ToDo(models.Model):
     project = models.ForeignKey(Project, null=True, on_delete=models.SET_NULL)
     text = models.CharField(max_length=300)
-    creator = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+    creator = models.ForeignKey(usermodels.User, null=True, on_delete=models.SET_NULL)
     creation_date = models.DateField(auto_now_add=True)
     update = models.DateField(auto_now_add=True)

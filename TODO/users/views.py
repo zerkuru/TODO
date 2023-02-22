@@ -3,11 +3,12 @@ from rest_framework.viewsets import ModelViewSet
 from .models import User
 from .serializers import UserModelSerializer
 from rest_framework.views import APIView
+from rest_framework.viewsets import ModelViewSet
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 
 
-class UserModelViewSet(APIView):
+class UserModelViewSet(ModelViewSet):
     renderer_classes = [JSONRenderer]
     def get(self, request, format=None):
         articles = User.objects.all()
