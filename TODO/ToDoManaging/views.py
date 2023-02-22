@@ -15,14 +15,23 @@ class ProjectModelViewSet(ModelViewSet):
         serializer = ProjectModelSerializer(Project, many=True)
         return Response(serializer.data)
 
+    def list(self, request):
+        todos = ToDo.objects.all()
+        serializer = ToDoModelSerializer(ToDo, many=True)
+        return Response(serializer.data)
+
 class ToDoModelViewSet(ModelViewSet):
     renderer_classes = [JSONRenderer]
 
     def get(self, request, format=None):
-        articles = ToDo.objects.all()
+        todos = ToDo.objects.all()
         serializer = ToDoModelSerializer(ToDo, many=True)
         return Response(serializer.data)
 
+    def list(self, request):
+        todos = ToDo.objects.all()
+        serializer = ToDoModelSerializer(ToDo, many=True)
+        return Response(serializer.data)
 
 
 # Create your views here.
