@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'ToDoManaging',
     'mixer',
     'rest_framework.authtoken',
-
+    'django.contrib.staticfiles',
+    'graphene_django'
 ]
 
 MIDDLEWARE = [
@@ -82,6 +83,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'TODO.wsgi.application'
 
+GRAPHENE = {
+    "SCHEMA": "library.schema.schema"
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

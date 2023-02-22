@@ -20,6 +20,7 @@ from rest_framework.routers import DefaultRouter
 from users.views import UserModelViewSet
 from ToDoManaging.views import ToDoModelViewSet, ProjectModelViewSet
 from rest_framework.authtoken import views
+from graphene_django.views import GraphQLView
 
 
 router = DefaultRouter()
@@ -34,6 +35,8 @@ urlpatterns = [
     path('api-token-auth/', views.obtain_auth_token),
     path('api/users/0.1', include('users.urls', namespace='0.1')),
     path('api/users/0.2', include('users.urls', namespace='0.2')),
+    path("graphql/", GraphQLView.as_view(graphiql=True)),
+
 ]
 
 
