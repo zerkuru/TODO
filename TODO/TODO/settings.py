@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'users',
     'ToDoManaging',
+    'mixer',
     'rest_framework.authtoken',
 
 ]
